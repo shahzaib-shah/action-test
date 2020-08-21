@@ -27,15 +27,17 @@ jobs:
         port: 22
         script: |
           whoami
+          echo '================================'
           ls -a
           echo '================================'
           cd /var/www/html/action-test/action-test
+          echo 'start fetching from git...'
           git pull origin master
-          echo 'pulling..........'
+          echo 'fetched successfully'
 
     # Runs a set of commands using the runners shell
-    - name: build
-      run: |
-        ls -a
+#    - name: build
+#      run: |
+#        ls -a
 
 
