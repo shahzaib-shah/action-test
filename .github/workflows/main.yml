@@ -19,9 +19,16 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      uses: appleboy/ssh-action@master
+    with:
+      host: 'jogo.cpdevserver1.com'
+      username: 'ubuntu'
+      password: 'Z3pC0m123'
+      port: 22
+      script: whoami
 
     # Runs a set of commands using the runners shell
     - name: build
       run: |
-        ls -l
-        echo 'yo'
+        ls -a
+
