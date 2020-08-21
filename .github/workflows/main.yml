@@ -25,10 +25,14 @@ jobs:
         username: 'ubuntu'
         password: 'Z3pC0m123'
         port: 22
-        script: whoami
+        script: |
+          whoami
+          cd /var/www/action-test/action-test
+          git pull origin master
 
     # Runs a set of commands using the runners shell
     - name: build
       run: |
-        ls -a
+        cd /var/www/action-test/action-test
+
 
